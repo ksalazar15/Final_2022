@@ -1,6 +1,6 @@
 ---
 title: "Covid91 vaccine study Final2023"
-author: "Put your name here!"
+author: "Kevin Brandon Salazar"
 output: 
   html_document:
     number_sections: true
@@ -24,17 +24,49 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-## Males
+$H_0$ The vaccine is not effective in males for preventing covid
 
+$H_A$ The vaccine is effective in males for preventing covid
 
-## Females
+# Males
 
+## Methods
+## Results
 
-## LGBTQ
+```{r}
+Males = filter(FinalData, sex == "M")
+```
 
+## Descriptive Results
+## Graphical Descriptive Results
+## Numerical Descriptive Results
+## Inferential Results
 
+# Females
 
-## Druggies
+## Methods
+## Results
+## Descriptive Results
+## Graphical Descriptive Results
+## Numerical Descriptive Results
+## Inferential Results
 
+# LGBTQ
+
+## Methods
+## Results
+## Descriptive Results
+## Graphical Descriptive Results
+## Numerical Descriptive Results
+## Inferential Results
+
+# Druggies
+
+## Methods
+## Results
+## Descriptive Results
+## Graphical Descriptive Results
+## Numerical Descriptive Results
+## Inferential Results
 
 # Overall Results and Conclusions
