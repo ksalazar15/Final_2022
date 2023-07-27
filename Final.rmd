@@ -32,6 +32,11 @@ $H_A$ The vaccine is effective in males for preventing covid
 # Males
 
 ## Methods
+
+The response method is Cat~Cat, because the question is about the effectiveness of the vaccine in males therefore we have to subset the data to include males only. 
+
+Graphical display bar chart, Numerical display xtabs, Inferential display $x^2$ test
+
 ## Results
 
 ```{r}
@@ -47,7 +52,7 @@ barchartGC(~infected+treatment,data=Males, type="percent")
 
 ```
 
-
+This graph shows among the people who did get the vaccine while they were infected (covid19) showed a difference. Meanwhile among those who were not infected (OK) and took the vaccine no difference was showed.
 
 ## Numerical Descriptive Results
 
@@ -57,6 +62,8 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
+Among all the people infected it appears that the people who had the placebo (70%) are 2 times more likely to have covid than the people with the vaccine (30%) this shows that the vaccine is very effective. Meanwhile among all the people not infected (OK) it appears that the people who had the placebo (50%) are barely more likely to have covid than the people with the vaccine (49.5%) this shows that the vaccine is very ineffective in this scenario.
+
 ## Inferential Results
 
 ```{r}
@@ -65,6 +72,10 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
+In the Pearson's Chi-squared test P-Value is 0.0000000000001098 shows that the vaccine is effective in preventing covid among males. If you get the vaccine you are 2.28 less likely to get covid than someone who gets the placebo.
+
+In the Fisher's Exact Test P-Value is 0000000.23 which shows we can reject the Null Hypothesis. The odds ratio is that you are 0.35 times likely to get aids when you have the placebo than the vaccine. The answer is still the same.
+
 # Females
 
 $H_0$ The vaccine is not effective in females for preventing covid
@@ -72,6 +83,11 @@ $H_0$ The vaccine is not effective in females for preventing covid
 $H_A$ The vaccine is effective in females for preventing covid
 
 ## Methods
+
+The response method is Cat~Cat, because the question is about the effectiveness of the vaccine in females therefore we have to subset the data to include females only. 
+
+Graphical display bar chart, Numerical display xtabs, Inferential display $x^2$ test
+
 ## Results
 
 ```{r}
@@ -111,6 +127,11 @@ $H_A$ The vaccine is effective in Elicit Drug Users for preventing covid
 
 
 ## Methods
+
+The response method is Cat~Cat, because the question is about the effectiveness of the vaccine in LGBTQ therefore we have to subset the data to include LGBTQ only. 
+
+Graphical display bar chart, Numerical display xtabs, Inferential display $x^2$ test
+
 ## Results
 
 ```{r}
@@ -150,6 +171,11 @@ $H_A$ The vaccine is effective in Elicit Drug Users for preventing covid
 
 
 ## Methods
+
+The response method is Cat~Cat, because the question is about the effectiveness of the vaccine in Druggies therefore we have to subset the data to include Druggies only. 
+
+Graphical display bar chart, Numerical display xtabs, Inferential display $x^2$ test
+
 ## Results
 
 ```{r}
