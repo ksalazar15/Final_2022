@@ -20,6 +20,7 @@ FinalData <- FinalData %>%
 mutate(across(where(is.character), as.factor))
 ```
 
+
 # Introduction
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
@@ -66,6 +67,10 @@ fisher.test(table1)
 
 # Females
 
+$H_0$ The vaccine is not effective in females for preventing covid
+
+$H_A$ The vaccine is effective in females for preventing covid
+
 ## Methods
 ## Results
 
@@ -85,14 +90,25 @@ barchartGC(~infected+treatment,data=Females, type="percent")
 ## Numerical Descriptive Results
 
 ```{r}
-table1 <- xtabs(~infected+treatment, data=Females)
-rowPerc(table1)
-colPerc(table1)
+table2 <- xtabs(~infected+treatment, data=Females)
+rowPerc(table2)
+colPerc(table2)
 ```
 
 ## Inferential Results
 
+```{r}
+chisq.test(table2)
+chisqtestGC(table2)
+fisher.test(table2)
+```
+
 # LGBTQ
+
+$H_0$ The vaccine is not effective in LGBTQ for preventing covid
+
+$H_A$ The vaccine is effective in Elicit Drug Users for preventing covid
+
 
 ## Methods
 ## Results
@@ -113,14 +129,25 @@ barchartGC(~infected+treatment,data=LGBTQ, type="percent")
 ## Numerical Descriptive Results
 
 ```{r}
-table1 <- xtabs(~infected+treatment, data=LGBTQ)
-rowPerc(table1)
-colPerc(table1)
+table3 <- xtabs(~infected+treatment, data=LGBTQ)
+rowPerc(table3)
+colPerc(table3)
 ```
 
 ## Inferential Results
 
+```{r}
+chisq.test(table3)
+chisqtestGC(table3)
+fisher.test(table3)
+```
+
 # Druggies
+
+$H_0$ The vaccine is not effective in Elicit Drug Users for preventing covid
+
+$H_A$ The vaccine is effective in Elicit Drug Users for preventing covid
+
 
 ## Methods
 ## Results
@@ -141,11 +168,17 @@ barchartGC(~infected+treatment,data=DrugUser, type="percent")
 ## Numerical Descriptive Results
 
 ```{r}
-table1 <- xtabs(~infected+treatment, data=DrugUser)
-rowPerc(table1)
-colPerc(table1)
+table4 <- xtabs(~infected+treatment, data=DrugUser)
+rowPerc(table4)
+colPerc(table4)
 ```
 
 ## Inferential Results
+
+```{r}
+chisq.test(table4)
+chisqtestGC(table4)
+fisher.test(table4)
+```
 
 # Overall Results and Conclusions
