@@ -39,34 +39,113 @@ Males = filter(FinalData, sex == "M")
 
 ## Descriptive Results
 ## Graphical Descriptive Results
+
+```{r}
+barchartGC(~infected+treatment,data=Males)
+barchartGC(~infected+treatment,data=Males, type="percent")
+
+```
+
+
+
 ## Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~infected+treatment, data=Males)
+rowPerc(table1)
+colPerc(table1)
+```
+
 ## Inferential Results
+
+```{r}
+chisq.test(table1)
+chisqtestGC(table1)
+fisher.test(table1)
+```
 
 # Females
 
 ## Methods
 ## Results
+
+```{r}
+Females = filter(FinalData, sex == "F")
+```
+
 ## Descriptive Results
 ## Graphical Descriptive Results
+
+```{r}
+barchartGC(~infected+treatment,data=Females)
+barchartGC(~infected+treatment,data=Females, type="percent")
+
+```
+
 ## Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~infected+treatment, data=Females)
+rowPerc(table1)
+colPerc(table1)
+```
+
 ## Inferential Results
 
 # LGBTQ
 
 ## Methods
 ## Results
+
+```{r}
+LGBTQ = filter(FinalData, LGBTQ == "gay")
+```
+
 ## Descriptive Results
 ## Graphical Descriptive Results
+
+```{r}
+barchartGC(~infected+treatment,data=LGBTQ)
+barchartGC(~infected+treatment,data=LGBTQ, type="percent")
+
+```
+
 ## Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~infected+treatment, data=LGBTQ)
+rowPerc(table1)
+colPerc(table1)
+```
+
 ## Inferential Results
 
 # Druggies
 
 ## Methods
 ## Results
+
+```{r}
+DrugUser = filter(FinalData, DrugUser == "yes")
+```
+
 ## Descriptive Results
 ## Graphical Descriptive Results
+
+```{r}
+barchartGC(~infected+treatment,data=DrugUser)
+barchartGC(~infected+treatment,data=DrugUser, type="percent")
+
+```
+
 ## Numerical Descriptive Results
+
+```{r}
+table1 <- xtabs(~infected+treatment, data=DrugUser)
+rowPerc(table1)
+colPerc(table1)
+```
+
 ## Inferential Results
 
 # Overall Results and Conclusions
