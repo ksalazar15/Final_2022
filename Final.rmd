@@ -13,6 +13,7 @@ date: "`r Sys.Date()`"
 require(tidyverse)
 require(tigerstats)
 require(forcats)
+require(dplyr)
 FinalDat <-read.csv(file="final.csv",header=TRUE)
 #recode to remove the annoying "X" from the dataframe
 FinalData <- FinalDat  %>% select(-one_of("X"))
@@ -25,9 +26,11 @@ mutate(across(where(is.character), as.factor))
 
 A new  preventative vaccine (covid921) is under test in clinical trials. Given the nature of this vaccine it is suspected that the drug may exhibit different effectiveness across the variety of subpopulations tracked. Consider population subgroups by gender( guys and gals), drug use, and sexual orientation. Write a complete report that separately considers this drug for each subgroup and your recommendations as to whether people in the subgroup should take the vaccine. Structure your report in four sections each devoted to one of the four subgroups, use null and alternative hypothesis statements and correct statistical verbage when referencing p-values in conclusions.
 
-$H_0$ The vaccine is not effective in males for preventing covid
+$H_0$ The vaccine's effectiveness is not affected (and/or) significantly different in a variety of sub populations
 
-$H_A$ The vaccine is effective in males for preventing covid
+$H_A$ The vaccine's effectiveness is varied (and/or) significantly different in a variety of sub populations
+
+Data for the study came from final.csv, provided by the professor.
 
 # Males
 
@@ -52,7 +55,7 @@ barchartGC(~infected+treatment,data=Males, type="percent")
 
 ```
 
-This graph shows among the people who did get the vaccine while they were infected (covid19) showed a difference. Meanwhile among those who were not infected (OK) and took the vaccine no difference was showed.
+The graph reveals that almost half of the people received the vaccine and the other half received the placebo. Among the male subgroup the amount of males infected had a difference with 30% with the vaccine and 70% with the placebo. 
 
 ## Numerical Descriptive Results
 
@@ -62,7 +65,7 @@ rowPerc(table1)
 colPerc(table1)
 ```
 
-Among all the people infected it appears that the people who had the placebo (70%) are 2 times more likely to have covid than the people with the vaccine (30%) this shows that the vaccine is very effective. Meanwhile among all the people not infected (OK) it appears that the people who had the placebo (50%) are barely more likely to have covid than the people with the vaccine (49.5%) this shows that the vaccine is very ineffective in this scenario.
+Among all the people infected it appears that the people who had the placebo (70%) are 2 times more likely to have covid than the people with the vaccine (30%) this shows that the vaccine is very effective.
 
 ## Inferential Results
 
@@ -72,15 +75,14 @@ chisqtestGC(table1)
 fisher.test(table1)
 ```
 
-In the Pearson's Chi-squared test P-Value is 0.0000000000001098 shows that the vaccine is effective in preventing covid among males. If you get the vaccine you are 2.28 less likely to get covid than someone who gets the placebo.
+In the Pearson's Chi-squared test P-Value is 0.0000000000001098 shows that the vaccine is effective in preventing covid among males. If you get the vaccine you are 0.4375 less likely to get covid than someone who gets the placebo. 
 
-In the Fisher's Exact Test P-Value is 0000000.23 which shows we can reject the Null Hypothesis. The odds ratio is that you are 0.35 times likely to get aids when you have the placebo than the vaccine. The answer is still the same.
+In the Fisher's Exact Test P-Value is 0.00000000000004631 meanwhile the odds ratio is that you are 2.24 times likely to get covid when you have the placebo than the vaccine.
+
+With this in mind we can see the covid vaccine is way more effective in preventing males from contracting covid than the placebo.
 
 # Females
-
-$H_0$ The vaccine is not effective in females for preventing covid
-
-$H_A$ The vaccine is effective in females for preventing covid
+Data for the study came from final.csv, provided by the professor.
 
 ## Methods
 
@@ -103,6 +105,8 @@ barchartGC(~infected+treatment,data=Females, type="percent")
 
 ```
 
+The graph reveals that almost half of the people received the vaccine and the other half received the placebo. Among the female subgroup the amount of females infected had a difference with 40% with the vaccine and 60% with the placebo. 
+
 ## Numerical Descriptive Results
 
 ```{r}
@@ -110,6 +114,8 @@ table2 <- xtabs(~infected+treatment, data=Females)
 rowPerc(table2)
 colPerc(table2)
 ```
+
+Among all the people infected it appears that the people who had the placebo (60%) are 1.5 times more likely to have covid than the people with the vaccine (40%) this shows that the vaccine is effective.
 
 ## Inferential Results
 
@@ -119,12 +125,15 @@ chisqtestGC(table2)
 fisher.test(table2)
 ```
 
+In the Pearson's Chi-squared test P-Value is 0.0002732 shows that the vaccine is effective in preventing covid among females. If you get the vaccine you are 0.7 less likely to get covid than someone who gets the placebo. 
+
+In the Fisher's Exact Test P-Value is 0.0002162 with the odds ratio being that you are 1.5 times likely to get covid when you have the placebo than the vaccine.
+
+With this in mind we can se the covid vaccine is very effective in preventing females from contracting covid than the placebo, even proving to be more effective in the female subgroup in comparison to males 
+
+
 # LGBTQ
-
-$H_0$ The vaccine is not effective in LGBTQ for preventing covid
-
-$H_A$ The vaccine is effective in Elicit Drug Users for preventing covid
-
+Data for the study came from final.csv, provided by the professor.
 
 ## Methods
 
@@ -147,6 +156,8 @@ barchartGC(~infected+treatment,data=LGBTQ, type="percent")
 
 ```
 
+The graph reveals that almost half of the people received the vaccine and the other half received the placebo. Among the LGBTQ subgroup the amount of LGBTQ people infected had a difference with 80% with the vaccine and 19% with the placebo. 
+
 ## Numerical Descriptive Results
 
 ```{r}
@@ -154,6 +165,8 @@ table3 <- xtabs(~infected+treatment, data=LGBTQ)
 rowPerc(table3)
 colPerc(table3)
 ```
+
+Among all the people infected it appears that the people who had the placebo (15%) are only 0.2 times more likely to have covid than the people with the vaccine (85%) this suggests that the vaccine is very ineffective in our current subgroup compared to both males and females.
 
 ## Inferential Results
 
@@ -163,12 +176,14 @@ chisqtestGC(table3)
 fisher.test(table3)
 ```
 
+In the Pearson's Chi-squared test P-Value is 0.0000000666812 shows that the vaccine is still effective in preventing covid among LGBTQ. If you get the vaccine you are 0.2 less likely to get covid than someone who gets the placebo. 
+
+In the Fisher's Exact Test P-Value is 0.00000001029 with the odds ratio being that you are only 0.18 times likely to get covid when you have the placebo than the vaccine. 
+
+With this in mind we can suggest the the covid vaccine is slightly effective in preventing LGBTQ from contracting covid than the placebo, but when you put other subgroups into play like males and females the covid prevention effectivness in LGBTQ is way more inferior.
+
 # Druggies
-
-$H_0$ The vaccine is not effective in Elicit Drug Users for preventing covid
-
-$H_A$ The vaccine is effective in Elicit Drug Users for preventing covid
-
+Data for the study came from final.csv, provided by the professor.
 
 ## Methods
 
@@ -191,6 +206,8 @@ barchartGC(~infected+treatment,data=DrugUser, type="percent")
 
 ```
 
+The graph reveals that almost half of the people received the vaccine and the other half received the placebo. Among the DrugUser subgroup the amount of people infected had a difference with 85% with the vaccine and 18% with the placebo. 
+
 ## Numerical Descriptive Results
 
 ```{r}
@@ -198,6 +215,8 @@ table4 <- xtabs(~infected+treatment, data=DrugUser)
 rowPerc(table4)
 colPerc(table4)
 ```
+
+Among all the people infected it appears that the people who had the placebo (12%) are only 0.1 times more likely to have covid than the people with the vaccine (88%) this suggests that the vaccine is most ineffective in our current subgroup compared to both males, females, and LGBTQ.
 
 ## Inferential Results
 
@@ -207,4 +226,11 @@ chisqtestGC(table4)
 fisher.test(table4)
 ```
 
+In the Pearson's Chi-squared test P-Value is 0.000000002842 shows that the vaccine is still effective in preventing covid among DrugUsers. If you get the vaccine you are 0.1 less likely to get covid than someone who gets the placebo. 
+
+In the Fisher's Exact Test P-Value is 0.000000000232 with the odds ratio being that you are only 0.13 times likely to get covid when you have the placebo than the vaccine. 
+
+With this in mind we can suggest the the covid vaccine is slightly effective in preventing DrugUsers from contracting covid than the placebo, but when you put other subgroups into play like males, females, and LGBTQ the covid prevention effectivness is the least in DrugUsers showing that it is way more inferior.
+
 # Overall Results and Conclusions
+
