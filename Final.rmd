@@ -79,7 +79,9 @@ In the Pearson's Chi-squared test P-Value is 0.0000000000001098 shows that the v
 
 In the Fisher's Exact Test P-Value is 0.00000000000004631 meanwhile the odds ratio is that you are 2.24 times likely to get covid when you have the placebo than the vaccine.
 
-With this in mind we can see the covid vaccine is way more effective in preventing males from contracting covid than the placebo.
+##Conclusion
+
+With with the question for this data being if the vaccine's effectiveness can be used to recommend this vaccine on a specific subgroup like males with our research in mind we can see the covid vaccine is way more effective in preventing males from contracting covid than the placebo, therefore we can recommend the use of this vaccine in males based on the research for the male subgroup. Meanwhile whether or not its effective for the use on all subgroups more research will be conducted below.
 
 # Females
 Data for the study came from final.csv, provided by the professor.
@@ -129,8 +131,9 @@ In the Pearson's Chi-squared test P-Value is 0.0002732 shows that the vaccine is
 
 In the Fisher's Exact Test P-Value is 0.0002162 with the odds ratio being that you are 1.5 times likely to get covid when you have the placebo than the vaccine.
 
-With this in mind we can se the covid vaccine is very effective in preventing females from contracting covid than the placebo, even proving to be more effective in the female subgroup in comparison to males 
+##Conclusion
 
+With with the question for this data being if the vaccine's effectiveness can be used to recommend this vaccine on a specific subgroup like females with our research in mind we can see the covid vaccine is way more effective in preventing females from contracting covid than the placebo, therefore we can recommend the use of this vaccine in females based on the research for the female subgroup. Meanwhile whether or not its effective for the use on all subgroups we can see that the covid vaccine is very effective in preventing females from contracting covid even proving to be more effective in the female subgroup in comparison to male.
 
 # LGBTQ
 Data for the study came from final.csv, provided by the professor.
@@ -180,7 +183,9 @@ In the Pearson's Chi-squared test P-Value is 0.0000000666812 shows that the vacc
 
 In the Fisher's Exact Test P-Value is 0.00000001029 with the odds ratio being that you are only 0.18 times likely to get covid when you have the placebo than the vaccine. 
 
-With this in mind we can suggest the the covid vaccine is slightly effective in preventing LGBTQ from contracting covid than the placebo, but when you put other subgroups into play like males and females the covid prevention effectivness in LGBTQ is way more inferior.
+##Conclusion
+
+With with the question for this data being if the vaccine's effectiveness can be used to recommend this vaccine on a specific subgroup like LGBTQ with our research in mind we can see the covid vaccine is in a small margin effective in preventing LGBTQ people from contracting covid than the placebo. Whether to recommend it or not its up to its effectiveness in comparison on all other subgroups. We can see that when you put other subgroups into play like males and females the covid prevention effectiveness in the LGBTQ subgroup is way more inferior leading us to be unable to suggest the usage of this vaccine for this specific subgroup.
 
 # Druggies
 Data for the study came from final.csv, provided by the professor.
@@ -230,7 +235,9 @@ In the Pearson's Chi-squared test P-Value is 0.000000002842 shows that the vacci
 
 In the Fisher's Exact Test P-Value is 0.000000000232 with the odds ratio being that you are only 0.13 times likely to get covid when you have the placebo than the vaccine. 
 
-With this in mind we can suggest the the covid vaccine is slightly effective in preventing DrugUsers from contracting covid than the placebo, but when you put other subgroups into play like males, females, and LGBTQ the covid prevention effectivness is the least in DrugUsers showing that it is way more inferior.
+##Conclusion
+
+With with the question for this data being if the vaccine's effectiveness can be used to recommend this vaccine on a specific subgroup like DrugUsers with our research in mind we can see the covid vaccine is in a small margin effective in preventing DrugUsers people from contracting covid than the placebo. Whether to recommend it or not its up to its effectiveness in comparison on all other subgroups. We can see that when you put other subgroups into play like males, females, and LGBTQ the covid prevention effectiveness in the DrugUsers subgroup is that least effective in the study of the DrugUsers subgroup leading us to be unable to suggest the usage of this vaccine for this specific subgroup.
 
 # Overall Results and Conclusions
 
